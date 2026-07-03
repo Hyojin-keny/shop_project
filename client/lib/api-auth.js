@@ -1,6 +1,8 @@
+const API = import.meta.env.VITE_API_URL;
+
 const signin = async (user) => {
   try {
-    let response = await fetch("/auth/signin", {
+    const response = await fetch(`${API}/auth/signin`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -9,17 +11,24 @@ const signin = async (user) => {
       credentials: "include",
       body: JSON.stringify(user),
     });
+
     return await response.json();
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
+
 const signout = async () => {
   try {
-    let response = await fetch("/auth/signout", { method: "GET" });
+    const response = await fetch(`${API}/auth/signout`, {
+      method: "GET",
+      credentials: "include",
+    });
+
     return await response.json();
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
+
 export { signin, signout };

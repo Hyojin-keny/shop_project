@@ -1,4 +1,4 @@
-const API_BASE = "/api/checkout";
+const API_BASE = `${import.meta.env.VITE_API_URL}/api/checkout`;
 
 const handleResponse = async (response) => {
   try {
@@ -25,6 +25,7 @@ const createOrder = async (order) => {
       },
       body: JSON.stringify(order),
     });
+
     return await handleResponse(response);
   } catch (err) {
     return handleError(err);
