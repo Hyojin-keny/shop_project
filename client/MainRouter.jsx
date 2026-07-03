@@ -8,7 +8,7 @@ import Profile from "./user/Profile.jsx";
 import PrivateRoute from "./lib/PrivateRoute.jsx";
 import EditProfile from "./user/EditProfile.jsx";
 import Products from "./product/Products.jsx";
-import ProductCart from "./product/cart.jsx";
+import ProductCart from "./product/Cart.jsx";
 import ProductCheckout from "./product/Checkout.jsx";
 import CategoryPage from "./product/CategoryPage";
 import Confirmation from "./product/Confirmation.jsx";
