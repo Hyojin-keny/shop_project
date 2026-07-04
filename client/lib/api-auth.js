@@ -8,7 +8,6 @@ const signin = async (user) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify(user),
     });
 
@@ -22,7 +21,6 @@ const signout = async () => {
   try {
     const response = await fetch(`${API}/auth/signout`, {
       method: "GET",
-      credentials: "include",
     });
 
     return await response.json();
